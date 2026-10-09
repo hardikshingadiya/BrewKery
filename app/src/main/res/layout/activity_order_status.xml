@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFAF7"
+    tools:context=".ui.order.OrderStatusActivity">
+
+    <!-- Coffee Icon -->
+    <LinearLayout
+        android:id="@+id/coffeeIconContainer"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="42dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/bg_order_icon"
+        android:elevation="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="☕"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <!-- Order heading -->
+    <TextView
+        android:id="@+id/tvOrderDispatched"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="ORDER DISPATCHED"
+        android:textColor="#E54428"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/coffeeIconContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOrderHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Brewing in Progress!"
+        android:textColor="#130D0A"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderDispatched"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOrderSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Your ticket was dispatched to our barista."
+        android:textColor="#947E73"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderHeading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Order Details Card -->
+    <LinearLayout
+        android:id="@+id/orderDetailsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_cart_summary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Ticket and status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ORDER TICKET"
+                    android:textColor="#947E73"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tvOrderTicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="#BK-74921"
+                    android:textColor="#211713"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvOrderStatusBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_preparing_badge"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="PREPARING"
+                android:textColor="#A7470B"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#F1E2D9" />
+
+        <!-- Estimated wait -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Estimated Wait:"
+                android:textColor="#947E73"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvEstimatedWait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 – 30 minutes"
+                android:textColor="#E54428"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Items ordered -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Items Ordered:"
+                android:textColor="#947E73"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvItemsOrdered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Items"
+                android:textColor="#211713"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#F1E2D9" />
+
+        <!-- Barista status -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Status:"
+            android:textColor="#947E73"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvBaristaStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Barista accepted your order!"
+            android:textColor="#16836C"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Back to Menu -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackToMenu"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#190D08"
+        android:text="Back to Menu"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
